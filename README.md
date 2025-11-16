@@ -1,10 +1,10 @@
 🌸 Classificação de Espécies de Íris com KNN
 📘 Descrição do Projeto
 
-Este projeto implementa um sistema de classificação automática de flores do gênero Íris, utilizando o algoritmo de aprendizado de máquina K-Nearest Neighbors (KNN).
+Este projeto implementa um sistema de classificação automática de flores do gênero Íris utilizando o algoritmo de aprendizado de máquina K-Nearest Neighbors (KNN).
 O trabalho foi desenvolvido como parte da AG2 – Engenharias de Computação e Software (Inatel), seguindo as diretrizes fornecidas pelos professores.
 
-O classificador identifica automaticamente a espécie da flor com base em quatro características botânicas, fornecidas pelo usuário ou pelo conjunto de dados.
+O classificador identifica automaticamente a espécie da flor com base em quatro características botânicas, fornecidas pelo usuário ou presentes no conjunto de dados original.
 
 👥 Autores
 
@@ -21,15 +21,12 @@ Código	Espécie
 2	Iris Versicolor
 3	Iris Virginica
 
-As previsões do modelo são feitas com base nas seguintes características:
+As previsões são feitas com base nas seguintes características:
 
 🌿 Comprimento da sépala (cm)
-
 🌿 Largura da sépala (cm)
-
-🌸 Comprimento da pétala (cm)
-
-🌸 Largura da pétala (cm)
+🌺 Comprimento da pétala (cm)
+🌺 Largura da pétala (cm)
 
 📊 Sobre o Dataset
 
@@ -37,34 +34,31 @@ Origem: UCI Machine Learning Repository
 
 Coletado por: Ronald Fisher (1936)
 
-Total de amostras: 150
+Total: 150 amostras
 
 Classes: 3 espécies (50 amostras cada)
 
 Atributos: 4 medidas numéricas por flor
 
-Formato: arquivo .csv disponibilizado pelo professor
+Dataset disponibilizado em formato .csv para uso no projeto.
 
 🧰 Tecnologias Utilizadas
 
-🐍 Python 3.11+
+Python 3.11+
 
-📊 Pandas – manipulação dos dados
+Pandas – manipulação dos dados
 
-🔢 NumPy – cálculos numéricos auxiliares
+NumPy – cálculos numéricos
 
-🤖 Scikit-Learn – treinamento, teste e métricas do modelo
+Scikit-Learn – modelo KNN e métricas
 
-📓 Jupyter Notebook – ambiente de desenvolvimento do projeto
+Jupyter Notebook – ambiente de desenvolvimento
 
 🛠️ Como Executar o Projeto
 🔹 1. Instalar dependências
-
-Execute no terminal:
-
 pip install pandas scikit-learn numpy jupyter
 
-🔹 2. Abrir o projeto no VS Code
+🔹 2. Abrir o projeto (VS Code)
 
 Abra a pasta do projeto
 
@@ -72,30 +66,16 @@ Instale a extensão Jupyter
 
 Abra o arquivo .ipynb
 
-Execute as células na ordem
+🔹 3. Executar
 
-🔹 3. Executar o Notebook
-
-Cada bloco contém uma etapa do processo:
-
-Carregamento dos dados
-
-Pré-processamento
-
-Divisão treino/teste
-
-Treinamento do modelo
-
-Avaliação
-
-Classificação interativa
+Rode as células do notebook na ordem apresentada.
 
 🚀 Etapas do Desenvolvimento
-1. Pré-processamento
+1. Pré-processamento dos Dados
 
 Leitura do arquivo iris.csv
 
-Conversão da coluna species para números:
+Conversão das espécies em valores numéricos:
 
 Iris-setosa → 1
 
@@ -105,13 +85,9 @@ Iris-virginica → 3
 
 2. Separação dos Dados
 
-80% usados para treinamento
+Divisão em 80% treino e 20% teste
 
-20% usados para teste
-
-Divisão realizada com train_test_split()
-
-Embaralhamento ativado conforme exigido pelo PDF
+Embaralhamento com train_test_split()
 
 3. Construção do Modelo KNN
 
@@ -119,23 +95,25 @@ Algoritmo: K-Nearest Neighbors
 
 Número de vizinhos: k = 6
 
-Distância utilizada: Euclidiana
-
-Modelo treinado com os dados de treino
+Distância Euclidiana para comparação
 
 4. Avaliação
 
-O sistema exibe:
+Acurácia do modelo
 
-✔️ Acurácia no conjunto de teste
+Relatório de classificação com:
 
-✔️ Relatório contendo precision, recall e f1-score
+Precision
 
-📝 Classificação Manual (Interativa)
+Recall
 
-O projeto conta com uma função que permite ao usuário digitar medidas reais de uma flor para classificá-la.
+F1-score
 
-Exemplo de entrada:
+📝 Classificação Manual Interativa
+
+O projeto possui uma função que permite ao usuário digitar medidas da flor e obter a espécie prevista.
+
+Exemplo:
 
 Comprimento da sépala: 5.2
 Largura da sépala: 3.4
@@ -143,6 +121,5 @@ Comprimento da pétala: 1.5
 Largura da pétala: 0.2
 
 
-Saída esperada:
-
-A amostra pertence à espécie: Setosa
+Resultado:
+→ A amostra pertence à espécie: Iris Setosa
