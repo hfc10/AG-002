@@ -1,124 +1,116 @@
-🌸 Classificação de Espécies de Íris com KNN
-📘 Descrição do Projeto
+# 🌸 Classificador de Espécies de Íris com KNN
 
-Este projeto implementa um sistema de classificação automática para flores do gênero Íris utilizando o algoritmo de aprendizado de máquina K-Nearest Neighbors (KNN).
+## 📘 Sobre o Projeto
 
-O trabalho foi desenvolvido para a AG2 – Engenharias de Computação e Software (Inatel), seguindo as diretrizes apresentadas pelos professores.
+Este projeto apresenta um sistema capaz de identificar automaticamente a
+espécie de uma flor do gênero *Íris* utilizando o algoritmo **K-Nearest
+Neighbors (KNN)**.\
+O desenvolvimento segue os requisitos da AG2 das Engenharias de
+Computação e Software do Inatel.
 
-O classificador identifica, automaticamente, a espécie da flor com base em quatro medidas botânicas fornecidas pelo usuário ou pelo dataset original.
+O modelo classifica cada flor com base em quatro medidas fornecidas no
+dataset ou inseridas manualmente pelo usuário.
 
-👥 Autores
+## 👥 Autores
 
-Henrique Fonseca de Castro
+-   **Henrique Fonseca de Castro**\
+-   **Marcus Vinicius de Faria Junho Filho**
 
-Marcus Vinicius de Faria Junho Filho
+## 🎯 Objetivo do Sistema
 
-🎯 Objetivo Principal
+O classificador prevê uma das seguintes espécies:
 
-Prever corretamente uma das três espécies de Íris, utilizando suas medidas físicas:
+  Código   Espécie
+  -------- -------------------
+  **1**    *Iris Setosa*
+  **2**    *Iris Versicolor*
+  **3**    *Iris Virginica*
 
-Código	Espécie
-1	Iris Setosa
-2	Iris Versicolor
-3	Iris Virginica
-✨ Características utilizadas na previsão:
+A predição é feita analisando:
 
-🌿 Comprimento da sépala (cm)
+-   Comprimento da sépala (cm)\
+-   Largura da sépala (cm)\
+-   Comprimento da pétala (cm)\
+-   Largura da pétala (cm)
 
-🌱 Largura da sépala (cm)
+## 📊 Sobre o Dataset
 
-🌸 Comprimento da pétala (cm)
+-   **Origem:** UCI Machine Learning Repository\
+-   **Autor da coleta:** Ronald Fisher (1936)\
+-   **Total de amostras:** 150\
+-   **Classes:** 3 espécies equilibradas (50 cada)\
+-   **Atributos:** 4 medidas numéricas por flor\
+-   Arquivo em `.csv` disponibilizado pelo professor
 
-🌺 Largura da pétala (cm)
+## 🧰 Tecnologias Utilizadas
 
-📊 Sobre o Dataset
+-   **Python 3.11+**\
+-   **Pandas** -- manipulação dos dados\
+-   **NumPy** -- operações numéricas\
+-   **Scikit-Learn** -- modelo KNN e métricas\
+-   **Jupyter Notebook** -- ambiente de desenvolvimento
 
-Origem: UCI Machine Learning Repository
+## 🛠️ Como Executar o Projeto
 
-Coletado por: Ronald Fisher (1936)
+### 🔹 1. Instalar dependências
 
-Amostras: 150
-
-Classes: 3 (50 de cada espécie)
-
-Atributos: 4 medidas numéricas por flor
-
-Dataset fornecido em formato .csv pelo professor.
-
-🧰 Tecnologias Utilizadas
-
-Python 3.11+
-
-Pandas – Manipulação dos dados
-
-NumPy – Cálculos numéricos
-
-Scikit-Learn – Treinamento e avaliação do modelo KNN
-
-Jupyter Notebook – Ambiente de desenvolvimento
-
-🛠️ Como Executar o Projeto
-🔹 1. Instalar dependências
+``` bash
 pip install pandas scikit-learn numpy jupyter
+```
 
-🔹 2. Abrir o projeto no VS Code
+### 🔹 2. Abrir o projeto no VS Code
 
-Abra a pasta do projeto
+1.  Abra a pasta do projeto\
+2.  Instale a extensão **Jupyter**\
+3.  Abra o arquivo `.ipynb`
 
-Instale a extensão Jupyter
+### 🔹 3. Executar as células
 
-Abra o arquivo .ipynb
+Execute o notebook de cima para baixo na ordem apresentada.
 
-🔹 3. Rodar o notebook
+## 🚀 Etapas do Desenvolvimento
 
-Execute as células na ordem apresentada.
+### **1. Pré-processamento**
 
-🚀 Etapas do Desenvolvimento
-1. Pré-processamento dos Dados
+-   Leitura do arquivo `iris.csv`\
+-   Conversão das espécies para números inteiros:
+    -   Setosa → **1**\
+    -   Versicolor → **2**\
+    -   Virginica → **3**
 
-Leitura do arquivo iris.csv
+### **2. Separação dos Dados**
 
-Conversão da coluna species em valores numéricos:
+-   80% para treino\
+-   20% para teste\
+-   Divisão aleatória via `train_test_split()`
 
-Setosa → 1
+### **3. Construção do Modelo**
 
-Versicolor → 2
+-   Algoritmo: **K-Nearest Neighbors (KNN)**\
+-   Número de vizinhos: **k = 6**\
+-   Distância utilizada: Euclidiana
 
-Virginica → 3
+### **4. Avaliação**
 
-2. Separação dos Dados
+-   Acurácia do modelo\
+-   Relatório com **precision**, **recall** e **f1-score**
 
-80% para treinamento
+## 📝 Classificação Manual
 
-20% para teste
+O notebook inclui uma função interativa que permite testar novas
+amostras fornecendo manualmente as medidas da flor.
 
-Divisão com train_test_split()
+**Exemplo de entrada:**
 
-3. Construção do Modelo KNN
+    Comprimento da sépala: 5.2
+    Largura da sépala: 3.4
+    Comprimento da pétala: 1.5
+    Largura da pétala: 0.2
 
-Algoritmo: K-Nearest Neighbors
+O sistema retorna a espécie prevista com base no modelo treinado.
 
-Valor de k utilizado: 6
+## ✔️ Resultado Final
 
-Distância Euclidiana
-
-4. Avaliação
-
-Inclui:
-
-Acurácia no conjunto de teste
-
-Relatório com precision, recall e f1-score
-
-📝 Classificação Manual (Interativa)
-
-O projeto possui uma função que recebe as medidas fornecidas pelo usuário e retorna a espécie prevista.
-
-Exemplo de entrada:
-
-Comprimento da sépala: 5.2
-Largura da sépala: 3.4
-Comprimento da pétala: 1.5
-Largura da pétala: 0.2
-
-RESULTADO: A amostra pertence à espécie: Setosa
+O projeto entrega um classificador funcional, simples de utilizar e fiel
+aos requisitos da atividade AG2, permitindo prever espécies de Íris
+tanto a partir do dataset quanto por entrada manual do usuário.
