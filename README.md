@@ -1,33 +1,35 @@
 🌸 Classificação de Espécies de Íris com KNN
 📘 Descrição do Projeto
 
-Este trabalho implementa um sistema de classificação automática de flores do gênero Íris utilizando o algoritmo K-Nearest Neighbors (KNN).
-O projeto foi desenvolvido como parte da AG2 das Engenharias de Computação e Software do Inatel, seguindo os requisitos apresentados pelos professores.
+Este projeto implementa um sistema de classificação automática de flores do gênero Íris utilizando o algoritmo de aprendizado de máquina K-Nearest Neighbors (KNN).
+O trabalho foi desenvolvido como parte da AG2 – Engenharias de Computação e Software do Inatel, seguindo as diretrizes fornecidas pelos professores.
 
-O classificador identifica a qual espécie a flor pertence com base em quatro medidas botânicas fornecidas pelo usuário ou contidas no dataset original.
+O sistema identifica automaticamente a espécie da flor com base em quatro características botânicas, fornecidas pelo usuário ou presentes no dataset original.
 
 👥 Autores
 
 Henrique Fonseca de Castro
+
 Marcus Vinicius de Faria Junho Filho
 
 🎯 Objetivo Principal
 
-O objetivo é prever corretamente uma entre três espécies de íris, a partir de suas medidas:
+Prever corretamente uma entre três espécies de íris usando suas medidas físicas:
 
-Código	Espécie
-1	Iris Setosa
-2	Iris Versicolor
-3	Iris Virginica
-As previsões são feitas usando:
+Código → Espécie
 
-Comprimento da sépala (cm)
+1 → Iris Setosa
 
-Largura da sépala (cm)
+2 → Iris Versicolor
 
-Comprimento da pétala (cm)
+3 → Iris Virginica
 
-Largura da pétala (cm)
+Características utilizadas pelo modelo
+
+🌿 Comprimento da sépala (cm)
+🌿 Largura da sépala (cm)
+🌺 Comprimento da pétala (cm)
+🌺 Largura da pétala (cm)
 
 📊 Sobre o Dataset
 
@@ -35,53 +37,48 @@ Origem: UCI Machine Learning Repository
 
 Coletado por: Ronald Fisher (1936)
 
-Total: 150 amostras
+Total de amostras: 150
 
-Classes: 3 espécies com 50 amostras cada
+Espécies: 3 classes (50 amostras cada)
 
 Atributos: 4 medidas numéricas por flor
 
-Dataset utilizado no formato .csv disponibilizado pelo professor.
+Dataset disponibilizado pelo professor em formato .csv
 
 🧰 Tecnologias Utilizadas
 
 Python 3.11+
 
-Pandas – manipulação dos dados
+Pandas – manipulação e leitura dos dados
 
-NumPy – cálculos numéricos auxiliares
+NumPy – cálculos auxiliares
 
-Scikit-Learn – treinamento e avaliação do modelo KNN
+Scikit-Learn – construção e avaliação do modelo KNN
 
-Jupyter Notebook – ambiente de desenvolvimento
+Jupyter Notebook – execução e organização do projeto
 
 🛠️ Como Executar o Projeto
 🔹 1. Instalar dependências
-
-Use o comando abaixo no terminal:
-
 pip install pandas scikit-learn numpy jupyter
 
-🔹 2. Abrir o projeto
-
-Se estiver usando VS Code:
+🔹 2. Abrir no VS Code
 
 Abra a pasta do projeto
 
-Instale a extensão "Jupyter"
+Instale a extensão Jupyter
 
 Abra o arquivo .ipynb
 
-🔹 3. Rodar o notebook
+🔹 3. Executar o notebook
 
-Execute as células do notebook na ordem apresentada.
+Execute cada célula em ordem até o final.
 
 🚀 Etapas do Desenvolvimento
 1. Pré-processamento dos Dados
 
 Leitura do arquivo iris.csv
 
-Conversão da coluna species em valores numéricos:
+Conversão da coluna species para valores numéricos:
 
 Iris-setosa → 1
 
@@ -91,40 +88,39 @@ Iris-virginica → 3
 
 2. Separação dos Dados
 
-80% usados para treinar o modelo
+80% dos dados usados para treinar o modelo
 
 20% reservados para teste
 
-Divisão aleatória realizada com train_test_split()
+Divisão feita com train_test_split() com embaralhamento aleatório
 
 3. Construção do Modelo KNN
 
-Algoritmo escolhido: K-Nearest Neighbors
+Algoritmo: K-Nearest Neighbors
 
-Número de vizinhos: k = 6 (valor ajustado para o projeto)
+Número de vizinhos: k = 6
 
-Cálculo da distância Euclidiana para determinar a classe mais próxima
+Distância usada: Euclidiana
+
+Modelo treinado com os dados de treino
 
 4. Avaliação
 
 Inclui:
 
-Acurácia do modelo no conjunto de teste
+Acurácia no conjunto de teste
 
-Relatório contendo precision, recall e f1-score
+Relatório com precision, recall e f1-score
 
-📝 Como Utilizar a Classificação Manual
+📝 Classificação Manual
 
-O projeto inclui uma função interativa que permite ao usuário digitar as medidas da flor para obter a espécie prevista.
+O sistema permite que o próprio usuário insira medidas e receba uma previsão imediata.
 
-Exemplo de uso:
-
+Exemplo de entrada:
 Comprimento da sépala: 5.2
 Largura da sépala: 3.4
 Comprimento da pétala: 1.5
 Largura da pétala: 0.2
 
-
-A saída será semelhante a:
-
-A flor foi classificada como: Virginica
+Saída esperada:
+RESULTADO: A amostra pertence à espécie: Setosa
